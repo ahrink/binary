@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+	<title></title>
+	<meta name="generator" content="LibreOffice 24.2.7.2 (Linux)"/>
+	<meta name="created" content="2026-02-01T13:34:44.876089734"/>
+	<meta name="changed" content="2026-02-05T08:42:03.431290651"/>
+	<style type="text/css">
+		@page { size: 8.27in 11.69in; margin: 0.79in }
+		p { line-height: 115%; margin-bottom: 0.1in; background: transparent; background: transparent }
+		pre { background: transparent; background: transparent }
+		pre.western { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		pre.cjk { font-family: "Noto Sans Mono CJK SC", monospace; font-size: 10pt }
+		pre.ctl { font-family: "Liberation Mono", monospace; font-size: 10pt }
+		a:link { color: #000080; text-decoration: underline }
+		a:visited { color: #800000; text-decoration: underline }
+	</style>
+</head>
+<body lang="en-US" link="#000080" vlink="#800000" dir="ltr"><p style="line-height: 100%; margin-bottom: 0in">
+Tar -Untar for GVF (example) Source: <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">/home/$USER/zBK20260131/</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">[keynote
+1: the first source was manually compiled to assure development]</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">[keynote
+2: the skeleton is a baby expecting to grow]</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">[keynote
+3: from prototype to maturity, is a GVF metaphor – a clone of the
+clone] --</font></font> <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">[routines]</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"># Establish a target
+directory path as a library of dated tar files</p>
+<p style="line-height: 100%; margin-bottom: 0in"># is to create a
+directory to store the tar file/s eg xLibs</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+mkdir -p /home/$USER/xLibs</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"># GVF is bonded to
+USB ext4 FS data paths … (for now)</p>
+<p style="line-height: 100%; margin-bottom: 0in"># the archive file
+name starts with date followed by a letter</p>
+<p style="line-height: 100%; margin-bottom: 0in"># indicating last
+archival eg 20260131a_gvf.tar</p>
+<p style="line-height: 100%; margin-bottom: 0in"># <i>a pseudo as a
+dated-clone</i></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"># 1. Method I,
+CREATE portable archive (from INSIDE source)</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">cd
+/home/$USER/zBK20260131/ # cd source</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+tar -czf /home/$USER/xLibs/20260131a_gvf.tar .</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"># 2. create test
+fresh-Restore point</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+mkdir -p /home/$USER/zArk</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"># 3. Restore
+clone(source.tar) to destination(<font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">project-root-path</font></font>)</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+tar -xzf /home/$USER/xLibs/20260131a_gvf.tar \</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">--strip-components=1
+-C /home/$USER/zArk</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">The preamble is a
+preparation that declares what is source to destination: (a) creating
+the achieve somewhere for backup reasons; (b) restore from backup
+only the skeleton inside the archive.</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">Steps 1-3 explains
+how to create an archival point with tar. Once the tar file was
+created, it can be used to restore. However, the restoration process
+reflects over a skeleton inside a <i>project-root-path</i>. Where
+–strip-components flag affects one element of the original path. As
+an example:</p>
+<p style="line-height: 100%; margin-bottom: 0in">- original path at
+the time the archive was created eg <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">zBK20260131</font></font>
+was replaced by <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">20260131a_gvf</font></font>
+due to the cd (change directory inside); -- in this case the
+restoration of the skeleton has a <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">project-root-path:</font></font>
+<font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">20260131a_gvf</font></font>
+(the name of the tar file);</p>
+<p style="line-height: 100%; margin-bottom: 0in">- since our interest
+is to manipulate the original <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">project-root-path</font></font>,
+we used –strip-components flag which dictates where the skeleton
+will be restored. In this case the final destination of the skeleton
+will be restored per path provided eg (example)
+destination=<font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">/home/$USER/zArk</font></font>.</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">Method II, is a
+process that articulates working with <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">full
+paths</font></font> which offers more precision.</p>
+<p style="line-height: 100%; margin-bottom: 0in">- tar file name:
+<font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">20260131b_gvf.tar</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in">- tar full path and
+file name: <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">/home/$USER/xLibs/20260131b_gvf.tar</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">1. create the
+archive (destination ← source)</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+tar -czf /home/$USER/xLibs/20260131b_gvf.tar -C /home/$USER
+zBK20260131</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><b>Note:</b> the
+accent is on <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">-C
+/home/$USER zBK20260131</font></font> <font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">that
+keeps the focus on skeleton regardless of its peer/parent.</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">2. Set a Clean
+Restore Point</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+rm -r /home/$USER/zArk &amp;&amp; sudo mkdir -p /home/$USER/zArk</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">ls
+-l /home/$USER/zArk # should be empty for this experiment</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in">3. Restore
+source.tar to a destination</p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">sudo
+tar -xzf /home/$USER/xLibs/20260131b_gvf.tar \</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">--strip-components=1
+-C /home/$USER/zArk</font></font></p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<p style="line-height: 100%; margin-bottom: 0in"><b>Note:</b> the
+portability used in above example is a direct connection to a
+skeleton/container which is a backup restore process. The
+<font face="Liberation Serif, serif"><i>project-root-path</i></font>
+on the other hand, is a precise definition of the skeleton/container
+residency.</p>
+<p style="line-height: 100%; margin-bottom: 0in"><br/>
+
+</p>
+<pre class="western"><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">In scripting/programming the <i>project-root-path</i> plays an important aspect to configuration and rules established in architecture compromise, addressing self-check of a skeleton.</font></font>
+
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">Building a foundation,</font></font>
+
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">San Anton [20260131 via AHR “Recovery Point is and should be partial-manual not automated of old vs new, it may include tools outside the <font face="Nimbus Mono PS"><font size="2" style="font-size: 10pt">project-root-path</font></font>]”</font></font>
+<font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">PS: (</font></font><font face="Liberation Serif, serif"><font size="3" style="font-size: 12pt">is hierarchically disconnection from prior AHR-discourse on the matters of GVF – connecting the dots to a larger project)</font></font></pre>
+</body>
+</html>
