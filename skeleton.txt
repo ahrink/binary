@@ -1,0 +1,42 @@
+SKE="__SKE__" # <skeleton> patched (do not edit)
+├── 001_path.sh
+├── 002_tarExe.sh
+├── 003_list.txt
+├── 004_state.txt
+├── bin
+│   ├── AHRtID
+│   └── uniprint
+├── dev
+│   ├── t00_cmn.sh
+│   └── t01_cmn.sh
+├── docs
+│   ├── 20260204_t01.html
+│   ├── skeleton.txt
+│   └── tar_untar.html
+├── pdf
+├── pub
+└── xC
+    ├── AHRtID
+    │   ├── AHRtID (exe copy to bin)
+    │   ├── includes
+    │   │   └── ahr_tid.h
+    │   ├── makefile
+    │   ├── sh
+    │   │   ├── 00_env.sh
+    │   │   ├── 01_once_tarname.sh
+    │   │   ├── 02_loop_safe.sh
+    │   │   ├── 03_clean_cache.sh
+    │   │   ├── 04_bench_calls.sh
+    │   │   └── TME_stamp.sh
+    │   └── src
+    │       ├── ahr_tid.c
+    │       ├── AHRtID.c
+    │       ├── ahr_tid.o
+    │       └── AHRtID.o
+    └── Uniprint
+        ├── includes
+        │   └── ahr_utf8.h
+        ├── makefile
+        └── src
+            ├── ahr_utf8.c
+            └── uniprint.c
